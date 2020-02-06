@@ -13,6 +13,6 @@ class DefaultController
      * @return false|string
      */
     public static function index($request) {
-        return json_encode($request->getQuery());
+
     }
 }

@@ -2,10 +2,23 @@
 
 namespace core\Route;
 
+use Ahc\Jwt\JWT;
+
 interface IRequest
 {
     public function getBody();
     public function getQuery();
+    public function getSession();
+
+    /**
+     * @return JWT
+     */
+    public function getJWT();
+
+    /**
+     * @return string
+     */
+    public function getToken();
 }
 
 
@@ -56,9 +69,12 @@ interface IRequest
  */
 class Request implements IRequest
 {
+    private $jwt;
+
     function __construct()
     {
         $this->bootstrapSelf();
+        $this->jwt = new JWT("Aa123456&", "HS256", 3600, 10);
     }
 
     private function bootstrapSelf() {
@@ -107,11 +123,34 @@ class Request implements IRequest
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getQuery() {
         parse_str($this->queryString, $result);
 
         return $result;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSession()
+    {
+        return $_SESSION;
+    }
+
+    public function getJWT()
+    {
+        return $this->jwt;
+    }
+
+    public function getToken()
+    {
+        /**
+         * @var string
+         */
+        $header = apache_request_headers()["Authorization"];
+
+        return substr($header, 7);
     }
 }

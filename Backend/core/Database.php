@@ -12,26 +12,28 @@ class Database
     /**
      * @var mysqli
      */
-    private static $m_database;
+    private $m_database;
 
-    public static function Init($host, $user, $password, $database)
+    function __construct($host, $user, $password, $database)
     {
-        if(Database::$m_database == null) {
-            Database::$m_database = new mysqli($host, $user, $password, $database);
+        if($this->m_database == null) {
+            $this->m_database = new mysqli($host, $user, $password, $database);
 
-            if(Database::$m_database->connect_errno) {
+            if($this->m_database->connect_errno) {
                 throw new mysqli_sql_exception("An Error Occured!!!");
             }
+
+            $this->m_database->set_charset("utf8mb4");
         }
     }
 
-    public static function Dispose() {
-        if(Database::$m_database != null) {
-            Database::$m_database->close();
+    function __destruct() {
+        if($this->m_database != null) {
+            $this->m_database->close();
         }
     }
 
-    public static function Instance() {
-        return Database::$m_database;
+    public function get() {
+        return $this->m_database;
     }
 }
