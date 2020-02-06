@@ -55,10 +55,11 @@ class TimestampController
         }
 
         $payload = $jwt->decode($token);
-        $body = $request->getBody();
+
+        //echo json_encode($payload["user_id"]);
 
         $userTimestampRepository = new \UserTimestampRepository(new Database("localhost", "root", "Aa123456&", "brik"));
 
-        return json_encode($userTimestampRepository->getOne($payload["user_id"]));
+        return json_encode(($userTimestampRepository->getOne($payload["user_id"])));
     }
 }
