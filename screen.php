@@ -16,7 +16,6 @@ $selectB = function($color, $navn, $param) use($connect) {
             while ($row = mysqli_fetch_assoc($data)) {
 
                 echo '<div class="img-container">';
-
                 if (strlen($row['billede']) > 0) {
                     //echo '<img src="data:images/png;base64,' . base64_encode($blob) . '" alt="' . $row['username'] . '" title="' . $row['username'] . '" class="img" style="width=100%"/>';
                     echo '<img src="' . $row['billede'] . '" alt="' . $row['username'] . '" title="' . $row['username'] . '" class="img" style="width=100%"/>';

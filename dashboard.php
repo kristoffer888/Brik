@@ -39,16 +39,11 @@ if (isset($_POST["zzz"])) {
     <body>
         <header>
             <nav>
-                <!--<p class="logo">IT&DATA - SKP</p>-->
                 <ul>
                     <li><p>IT&DATA - SKP</p></li>
-                    <!--<li><a href="#">Historik</a></li>-->
                     <li class="navbar-float-right-element">
                         <a href="index.php" class="logout-butten">Log ud</a>
                     </li>
-                    <!--<li class="navbar-float-right-element">
-                        <a href="screen.php" class="logout-butten" >Brikskærm</a>
-                    </li>-->
                     <li class="navbar-float-right-element">
                         <button class="username-text"name="" type="button">Profil:
                             <?php
@@ -128,7 +123,6 @@ if (isset($_POST["zzz"])) {
                     <button class="user-button-zone-panel" name="zzz" value="8" type="submit">Check ud</button>
                     <button class="user-button-zone-panel" name="zzz" value="9" type="submit">HF: Supp/Infr</button>
                     <button class="user-button-zone-panel" name="zzz" value="10" type="submit">HF: Prog</button>
-                    <?php /* <button class="user-button-zone-panel" name="zzz" value="11" type="submit">Syg</button>' */ ?>
                 </form>
             </div>
         </main>
