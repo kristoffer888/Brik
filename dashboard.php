@@ -45,7 +45,7 @@ if (isset($_POST["zzz"])) {
                         <a href="index.php" class="logout-butten">Log ud</a>
                     </li>
                     <li class="navbar-float-right-element">
-                        <button class="username-text"name="" type="button">Profil:
+                        <button class="username-text" id="profil" type="button">Profil:
                             <?php
                             echo $_SESSION ['username'];
                             ?>
