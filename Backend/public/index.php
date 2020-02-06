@@ -25,7 +25,7 @@ use Ahc\Jwt\JWT;
 
 $router = new Router(new Request);
 
-$router->get("/", function ($request) {
+$router->get("/Brik/Backend/public/", function ($request) {
 //    global $jwt;
 //
 //
@@ -45,3 +45,5 @@ $router->post("/users", "core\Controller\UserController::store");
 $router->post("/users/token", "core\Controller\UserController::generateToken");
 
 $router->post("/register", "core\Controller\TimestampController::store");
+
+$router->get("/Brik/Backend/public/timestamps", "core\Controller\TimestampController::getUserTimestamp");

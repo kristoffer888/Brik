@@ -33,7 +33,7 @@ class TimestampController
 
         $userTimestamp = new \UserTimestamp($payload["user_id"], $zoneId);
 
-        $userTimestampRepository = new \UserTimestampRepository(new Database("localhost", "root", "Aa123456&", "brik"));
+        $userTimestampRepository = new \UserTimestampRepository(new Database("localhost", "root", "", "brik"));
 
         $userTimestampRepository->create($userTimestamp);
 
@@ -44,7 +44,7 @@ class TimestampController
      * @param IRequest $request
      * @return string
      */
-    public function getUserTimestamp($request) {
+    public static function getUserTimestamp($request) {
         $jwt = $request->getJWT();
 
         $token = $request->getToken();
@@ -55,10 +55,11 @@ class TimestampController
         }
 
         $payload = $jwt->decode($token);
-        $body = $request->getBody();
 
-        $userTimestampRepository = new \UserTimestampRepository(new Database("localhost", "root", "Aa123456&", "brik"));
+        //echo json_encode($payload["user_id"]);
 
-        return $userTimestampRepository->getOne($payload["user_id"]);
+        $userTimestampRepository = new \UserTimestampRepository(new Database("localhost", "root", "", "brik"));
+
+        return json_encode(($userTimestampRepository->getOne($payload["user_id"])));
     }
 }
