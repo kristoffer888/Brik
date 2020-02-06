@@ -39,6 +39,11 @@ html,body{
     height: 100px;
     width: 100px;
     margin: 2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 100%;
+    border-width: 0.5px;
+    border: solid;
+    border-color: rgba(173, 216, 230, 0.7);
 }
 
 .img{
@@ -50,10 +55,7 @@ html,body{
     border-radius: 50%;
 }
 
-/*vigor styles*/
-
 /*The start of the navbar*/
-
 header nav{
     background-color: #3C8DBC;
 }
@@ -135,41 +137,47 @@ header .username-text{
     padding-right: 10px;
 }
 
+header .location-text{
+    margin-top: 13px;
+    width: auto;
+    height: 34px;
+    border: none;
+    border-radius: 3px;
+    background-color: #1c993d;
+    color: whitesmoke;
+    font-size: 17px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #484848;
+    pointer-events: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 /*The start of the main container */
 main #zone-container-button{
     margin-top: 100px;
-    width: 70%;
-    height: 330px;;
+    width: 790px;
+    height: auto;
     /*background-color: wheat;*/
     margin-left: auto;
     margin-right: auto;
 }
 
-
-
-
 /*The start of the user interface buttons*/
 main .user-button-zone-panel{
-    margin-top: 40px;
-    margin-left: 30px;
-    /*border: none;*/
+    margin: 15px;
+    border: none;
     background-color: #909090;
     width: 230px;
     height:100px; 
     cursor: pointer;
     font-size: 33px;
     border-radius: 3px; 
-    border:solid;
 }
-
-
 
 main .user-button-zone-panel:hover{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-button:focus {
-    background-color:limegreen;
 }
 
 /*Ny media ------------------------------------------------orange*/
@@ -180,23 +188,24 @@ button:focus {
        background-color: orange;
    }*/
 
-    /*The start of the main container */
     main #zone-container-button{
         margin-top: 100px;
         width: 560px;
         height: 590px;;
-        /*background-color: wheat*/
         margin-left: auto;
         margin-right: auto;
     }
 
-}
 
+    /*The start of the main container */
+    main #zone-container-button{
+        margin-top: 30px;
+    }
+
+}
 
 /*Ny media ------------------------------------------------Green*/
 @media only screen and (max-width: 782px) {
-
-
     header nav ul li {
         background-color: green;
     }
@@ -204,25 +213,18 @@ button:focus {
     /*The start of the main container */
     main #zone-container-button{
         margin-top: 100px;
-        width: 560px;
+        width: 782px;
         height: 590px;;
         /*background-color: wheat*/
         margin-left: auto;
         margin-right: auto;
     }
 
-
     header nav ul li{
         line-height: 50px;
     }
 
-
     header .navbar-float-right-element{
         float: none;
     }
-
-
 }
-
-
-

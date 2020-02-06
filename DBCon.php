@@ -4,7 +4,7 @@ $servername = 'localhost';
 $username = 'root';
 $password = '';
 $databasename = 'brik';
-$tabel_name = 'brikliste';
+$tabel_name = 'login';
 
 $connect = mysqli_connect($servername, $username, $password, $databasename);
 if (!$connect) {
