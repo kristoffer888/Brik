@@ -45,3 +45,5 @@ $router->post("/users", "core\Controller\UserController::store");
 $router->post("/users/token", "core\Controller\UserController::generateToken");
 
 $router->post("/register", "core\Controller\TimestampController::store");
+
+$router->get("/timestamps", "core\Controller\TimestampController::getUserTimestamp");

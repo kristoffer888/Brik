@@ -44,7 +44,7 @@ class TimestampController
      * @param IRequest $request
      * @return string
      */
-    public function getUserTimestamp($request) {
+    public static function getUserTimestamp($request) {
         $jwt = $request->getJWT();
 
         $token = $request->getToken();
@@ -59,6 +59,6 @@ class TimestampController
 
         $userTimestampRepository = new \UserTimestampRepository(new Database("localhost", "root", "Aa123456&", "brik"));
 
-        return $userTimestampRepository->getOne($payload["user_id"]);
+        return json_encode($userTimestampRepository->getOne($payload["user_id"]));
     }
 }

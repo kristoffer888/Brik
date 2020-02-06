@@ -74,6 +74,6 @@ class UserTimestampRepository
 
         $statement->close();
 
-        return $result->fetch_row();
+        return ($result->fetch_row());
     }
 }
