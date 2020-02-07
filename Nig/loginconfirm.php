@@ -29,7 +29,7 @@ if ($count == 1) {
     $_SESSION ['username'] = $user;
     $_SESSION ['password'] = $pass;
 
-    header("location:dashboard.php");
+    header("location:dashboard.html");
 } else {
 
     header("location:index.php");

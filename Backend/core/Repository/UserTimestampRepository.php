@@ -64,7 +64,7 @@ class UserTimestampRepository
     }
 
     public function getOne($id) {
-        $statement = $this->database->get()->prepare("SELECT ut.id, ut.placed_at, ut.removed_at, ui.first_name, ui.last_name, ui.icon_path, z.name FROM user_timestamps ut INNER JOIN user_icons ui ON ut.user_id = ui.id AND ut.user_id = ? INNER JOIN zones z ON z.id = ut.zone_id");
+        $statement = $this->database->get()->prepare("SELECT ut.id, ut.zone_id, ut.placed_at, ut.removed_at, ui.first_name, ui.last_name, ui.icon_path, z.name FROM user_timestamps ut INNER JOIN user_icons ui ON ut.user_id = ui.id AND ut.user_id = ? INNER JOIN zones z ON z.id = ut.zone_id ORDER BY ut.id DESC");
         $statement->bind_param("i", strval($id));
         $statement->execute();
 

@@ -127,22 +127,6 @@ if (isset($_POST["zzz"])) {
             </div>
         </main>
     </center>
-
-    <script>
-        var status = "<?php echo $status; ?>";
-
-        function showresults(value) {
-            if (value.value === status) {
-                value.style.backgroundColor = "#1c993d";
-                value.style.color = "whitesmoke";
-                value.style.border = "1px solid #484848";
-            }
-        }
-
-        var input = document.getElementsByName("zzz");
-        var inputlist = Array.prototype.slice.call(input);
-        inputlist.forEach(showresults);
-    </script>
 </body>
 </html>
 

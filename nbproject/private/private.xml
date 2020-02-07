@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/Brik/opretProjekt.html</file>
-            <file>file:/C:/xampp/htdocs/Brik/index.php</file>
+            <file>file:/C:/xampp/htdocs/Brik/Backend/core/Controller/TimestampController.php</file>
             <file>file:/C:/xampp/htdocs/Brik/dashboard.php</file>
-            <file>file:/C:/xampp/htdocs/Brik/screen.php</file>
-            <file>file:/C:/xampp/htdocs/Brik/brikes.php</file>
+            <file>file:/C:/xampp/htdocs/Brik/dashboard.html</file>
+            <file>file:/C:/xampp/htdocs/Brik/js/app.js</file>
+            <file>file:/C:/xampp/htdocs/Brik/Backend/core/Repository/UserTimestampRepository.php</file>
             <file>file:/C:/xampp/htdocs/Brik/style.css</file>
         </group>
     </open-files>
