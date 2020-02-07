@@ -33,7 +33,7 @@ class TimestampController
 
         $userTimestamp = new \UserTimestamp($payload["user_id"], $zoneId);
 
-        $userTimestampRepository = new \UserTimestampRepository(new Database("localhost", "root", "", "brik"));
+        $userTimestampRepository = new \UserTimestampRepository(new Database(env("DB_HOST"), env("DB_USERNAME"), env("DB_PASSWORD"), env("DB_NAME")));
 
         $userTimestampRepository->create($userTimestamp);
 
@@ -58,7 +58,7 @@ class TimestampController
 
         //echo json_encode($payload["user_id"]);
 
-        $userTimestampRepository = new \UserTimestampRepository(new Database("localhost", "root", "", "brik"));
+        $userTimestampRepository = new \UserTimestampRepository(new Database(env("DB_HOST"), env("DB_USERNAME"), env("DB_PASSWORD"), env("DB_NAME")));
 
         return json_encode(($userTimestampRepository->getOne($payload["user_id"])));
     }
