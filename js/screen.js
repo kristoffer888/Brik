@@ -1,3 +1,8 @@
+$("document").ready(function () {
+    get();
+    setInterval(get(), 2000);
+});
+
 function get() {
     $.ajax({
         url: "/Brik/Backend/public/timestamps",
@@ -35,4 +40,6 @@ function insertZone(startZone, endZone, data) {
 
         htmlString +=   "</div>\n";
     }
+
+    $("#content").html = htmlString;
 }
