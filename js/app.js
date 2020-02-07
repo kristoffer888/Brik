@@ -43,7 +43,7 @@ function setzone(caller) {
         method: "POST",
         headers: {"Authorization": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTU4MTA4MTY4Mn0.QfbTtMam4buyx_gpkxR2VwzIn-7bNAl2vQUBLosV-jU"},
         data: {"zone_id": caller.value},
-        success: function (data) {
+        success: function () {
             var input = document.getElementsByName("zzz");
             var inputlist = Array.prototype.slice.call(input);
             inputlist.forEach(buttreset);
@@ -51,10 +51,11 @@ function setzone(caller) {
             caller.style.color = "whitesmoke";
             caller.style.border = "1px solid #484848";
             get();
-        }});
+        }
+    });
 }
 
-function buttreset(value, button) {
+function buttreset(value) {
     value.style.backgroundColor = "#909090";
     value.style.color = "black";
     value.style.border = "unset";

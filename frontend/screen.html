@@ -12,15 +12,10 @@
     </head>
     <body>
         <div class="container-fluid">
-            <a href='dashboard.html' style="position: fixed;z-index: 9999;"><button>Tilbage</button></a>
+<!--            <a href='dashboard.html' style="position: fixed;z-index: 9999;"><button>Tilbage</button></a>-->
             <div class="row" id="content">
             </div>
-            <script>
-                $('#content').load("screen_generator.php");
-                const interval = setInterval(function () {
-                    $('#content').load("screen_generator.php");
-                }, 2000);
-            </script>
+            <script src="../js/screen.js"></script>
         </div>
     </body>
 </html>
