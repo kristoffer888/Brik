@@ -155,7 +155,7 @@ header .location-text{
 }
 
 /*The start of the main container */
-main #zone-container-button{
+#zone-container-button{
     margin-top: 100px;
     width: 790px;
     height: auto;
@@ -165,7 +165,7 @@ main #zone-container-button{
 }
 
 /*The start of the user interface buttons*/
-main .user-button-zone-panel{
+.user-button-zone-panel{
     margin: 15px;
     border: none;
     background-color: #909090;
@@ -176,7 +176,7 @@ main .user-button-zone-panel{
     border-radius: 3px; 
 }
 
-main .user-button-zone-panel:hover{
+.user-button-zone-panel:hover{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -188,7 +188,7 @@ main .user-button-zone-panel:hover{
        background-color: orange;
    }*/
 
-    main #zone-container-button{
+    #zone-container-button{
         margin-top: 100px;
         width: 560px;
         height: 590px;;
@@ -198,7 +198,7 @@ main .user-button-zone-panel:hover{
 
 
     /*The start of the main container */
-    main #zone-container-button{
+    #zone-container-button{
         margin-top: 30px;
     }
 
@@ -211,7 +211,7 @@ main .user-button-zone-panel:hover{
     }
 
     /*The start of the main container */
-    main #zone-container-button{
+    #zone-container-button{
         margin-top: 100px;
         width: 782px;
         height: 590px;;

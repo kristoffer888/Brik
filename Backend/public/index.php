@@ -42,8 +42,8 @@ $router->get("/users", "core\Controller\UserController::getUsers");
 
 $router->post("/users", "core\Controller\UserController::store");
 
-$router->post("/users/token", "core\Controller\UserController::generateToken");
+$router->post("/Brik/Backend/public/users/token", "core\Controller\UserController::generateToken");
 
-$router->post("/register", "core\Controller\TimestampController::store");
+$router->post("/Brik/Backend/public/register", "core\Controller\TimestampController::store");
 
 $router->get("/Brik/Backend/public/timestamps", "core\Controller\TimestampController::getUserTimestamp");

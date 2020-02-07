@@ -8,7 +8,7 @@ $selectB = function($color, $navn, $param) use($connect) {
             <h2> <?php echo $navn ?></h2>
         </div>
         <?php
-        $sql_tabel = "SELECT * FROM login WHERE status='$param'";
+        $sql_tabel = "SELECT * FROM user_icons WHERE status='$param'";
         $data = mysqli_query($connect, $sql_tabel);
         $datacheck = mysqli_num_rows($data);
 
@@ -18,7 +18,6 @@ $selectB = function($color, $navn, $param) use($connect) {
                 echo '<div class="img-container">';
 
                 if (strlen($row['billede']) > 0) {
-                    //echo '<img src="data:images/png;base64,' . base64_encode($blob) . '" alt="' . $row['username'] . '" title="' . $row['username'] . '" class="img" style="width=100%"/>';
                     echo '<img src="' . $row['billede'] . '" alt="' . $row['username'] . '" title="' . $row['username'] . '" class="img" style="width=100%"/>';
                 } else {
                     echo '<img src="images/kristoffer.png" alt="' . $row['username'] . '" title="' . $row['username'] . '" class="img" style="width=100%"/>';
@@ -32,9 +31,9 @@ $selectB = function($color, $navn, $param) use($connect) {
 
 
 
-    $selectB("whitesmoke", "Zone5", 1);
+    $selectB("whitesmoke", "Zone 5", 1);
 
-    $selectB("lightgrey", "Zone6", 2);
+    $selectB("lightgrey", "Zone 6", 2);
 
     $selectB("whitesmoke", "Programmører", 3);
 

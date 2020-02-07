@@ -1,15 +1,75 @@
+var status = 0;
+
+$("document").ready(function () {
+    get();
+
+    getZones();
+});
+
 function get() {
     $.ajax({
         url: "/Brik/Backend/public/timestamps",
         method: "GET",
-        headers: {"Authorization": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTU4MDk5MTE4Nn0.YpZBAuvocOoyFjZ26qlKGRgYlrT5zIcjqIRYJ6n1S3w"},
-    success: function(data){
-        alert(data);
-    }});
+        headers: {"Authorization": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTU4MTA4MTY4Mn0.QfbTtMam4buyx_gpkxR2VwzIn-7bNAl2vQUBLosV-jU"},
+        success: function (data) {
+
+            data = JSON.parse(data);
+            console.log(data);
+            status = data.zone_id;
+
+            insert("location", "Location: " + data.name);
+
+            var input = document.getElementsByName("zzz");
+            var inputlist = Array.prototype.slice.call(input);
+            inputlist.forEach(showresults);
+        }});
 }
 
-function receive(data) {
-    $("#profil").html("Profil: " + data.first_name);
+function insert(id, data) {
+    $("#" + id).html(data);
 }
 
-//id,placedat,removetat,user_id,firstname,lastname,iconpath,name
+function showresults(value) {
+    if (value.value === status) {
+        value.style.backgroundColor = "#1c993d";
+        value.style.color = "whitesmoke";
+        value.style.border = "1px solid #484848";
+    }
+}
+
+function setzone(caller) {
+    $.ajax({
+        url: "/Brik/Backend/public/register",
+        method: "POST",
+        headers: {"Authorization": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTU4MTA4MTY4Mn0.QfbTtMam4buyx_gpkxR2VwzIn-7bNAl2vQUBLosV-jU"},
+        data: {"zone_id": caller.value},
+        success: function (data) {
+            var input = document.getElementsByName("zzz");
+            var inputlist = Array.prototype.slice.call(input);
+            inputlist.forEach(buttreset);
+            caller.style.backgroundColor = "#1c993d";
+            caller.style.color = "whitesmoke";
+            caller.style.border = "1px solid #484848";
+            get();
+        }});
+}
+
+function buttreset(value, button) {
+    value.style.backgroundColor = "#909090";
+    value.style.color = "black";
+    value.style.border = "unset";
+}
+
+function getZones() {
+    $("#zone-container-button").append("<button class=\"user-button-zone-panel\" name=\"zzz\" value=\"1\" onclick=\"setzone(this)\">Zone 5</button>");
+    $("#zone-container-button").append("<button class=\"user-button-zone-panel\" name=\"zzz\" value=\"2\" onclick=\"setzone(this)\">Zone 6</button>");
+    $("#zone-container-button").append("<button class=\"user-button-zone-panel\" name=\"zzz\" value=\"3\" onclick=\"setzone(this)\">Programmører</button>");
+    $("#zone-container-button").append("<button class=\"user-button-zone-panel\" name=\"zzz\" value=\"4\" onclick=\"setzone(this)\">Serverrum</button>");
+    $("#zone-container-button").append("<button class=\"user-button-zone-panel\" name=\"zzz\" value=\"5\" onclick=\"setzone(this)\">Helpdesk</button>");
+    $("#zone-container-button").append("<button class=\"user-button-zone-panel\" name=\"zzz\" value=\"6\" onclick=\"setzone(this)\">Ekstern</button>");
+    $("#zone-container-button").append("<button class=\"user-button-zone-panel\" name=\"zzz\" value=\"7\" onclick=\"setzone(this)\">Fridag</button>");
+    $("#zone-container-button").append("<button class=\"user-button-zone-panel\" name=\"zzz\" value=\"8\" onclick=\"setzone(this)\">Check ud</button>");
+    $("#zone-container-button").append("<button class=\"user-button-zone-panel\" name=\"zzz\" value=\"9\" onclick=\"setzone(this)\">HF: Supp/Inf</button>");
+    $("#zone-container-button").append("<button class=\"user-button-zone-panel\" name=\"zzz\" value=\"10\" onclick=\"setzone(this)\">HF: Prog</button>");
+
+}
