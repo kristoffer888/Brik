@@ -14,7 +14,7 @@ class UserController
 {
 
     public static function getUsers($request) {
-        $userRepo = new \UserIconRepository(new Database("localhost", "root", "Aa123456&", "brik"));
+        $userRepo = new \UserIconRepository(new Database(env("DB_HOST"), env("DB_USERNAME"), env("DB_PASSWORD"), env("DB_NAME")));
 
         $query = $request->getQuery();
 
@@ -39,7 +39,7 @@ class UserController
 
         $userIcon = new \UserIcon($body["user_id"], $body["first_name"], $body["last_name"], $body["icon"]);
 
-        $userRepo = new \UserIconRepository(new Database("localhost", "root", "Aa123456&", "brik"));
+        $userRepo = new \UserIconRepository(new Database(env("DB_HOST"), env("DB_USERNAME"), env("DB_PASSWORD"), env("DB_NAME")));
 
         $userRepo->create($userIcon);
 
@@ -73,7 +73,7 @@ class UserController
 
         $userTimestamp = new \UserTimestamp($payload["user_id"], $zoneId);
 
-        $userTimestampRepository = new \UserTimestampRepository(new Database("localhost", "root", "Aa123456&", "brik"));
+        $userTimestampRepository = new \UserTimestampRepository(new Database(env("DB_HOST"), env("DB_USERNAME"), env("DB_PASSWORD"), env("DB_NAME")));
 
         $userTimestampRepository->create($userTimestamp);
 

@@ -1,5 +1,7 @@
 <?php
 
+include_once ("../autoload.php");
+
 include_once ("../core/Router.php");
 include_once ("../core/Route/Request.php");
 include_once ("../core/Controller/UserController.php");
@@ -25,7 +27,7 @@ use Ahc\Jwt\JWT;
 
 $router = new Router(new Request);
 
-$router->get("/Brik/Backend/public/", function ($request) {
+$router->get(env("BASE_URL") . "/", function ($request) {
 //    global $jwt;
 //
 //
@@ -36,14 +38,15 @@ $router->get("/Brik/Backend/public/", function ($request) {
     return "INDEX";
 });
 
-$router->get("/lol", "core\Controller\DefaultController::index");
+$router->get(env("BASE_URL") . "/lol", "core\Controller\DefaultController::index");
 
-$router->get("/users", "core\Controller\UserController::getUsers");
+$router->get(env("BASE_URL") . "/users", "core\Controller\UserController::getUsers");
 
-$router->post("/users", "core\Controller\UserController::store");
+$router->post(env("BASE_URL") . "/users", "core\Controller\UserController::store");
 
-$router->post("/Brik/Backend/public/users/token", "core\Controller\UserController::generateToken");
+$router->post(env("BASE_URL") . "/users/token", "core\Controller\UserController::generateToken");
 
-$router->post("/Brik/Backend/public/register", "core\Controller\TimestampController::store");
+$router->post(env("BASE_URL") . "/register", "core\Controller\TimestampController::store");
 
-$router->get("/Brik/Backend/public/timestamps", "core\Controller\TimestampController::getUserTimestamp");
+$router->get(env("BASE_URL") . "/timestamps", "core\Controller\TimestampController::getUserTimestamp");
+$router->get(env("BASE_URL") . "/zones/timestamps", "core\Controller\TimestampController::getZoneTimestamps");

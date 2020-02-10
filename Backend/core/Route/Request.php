@@ -74,7 +74,7 @@ class Request implements IRequest
     function __construct()
     {
         $this->bootstrapSelf();
-        $this->jwt = new JWT("Aa123456&", "HS256", 3600, 10);
+        $this->jwt = new JWT("Aa123456&", "HS256", 86400, 10);
     }
 
     private function bootstrapSelf() {

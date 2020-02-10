@@ -48,6 +48,7 @@ class Router
         if(!in_array(strtoupper($name), $this->supportedHttpMethods))
             $this->invalidMethodHandler();
 
+//        echo $route . "\r\n";
         $this->{strtolower($name)}[$this->formatRoute($route)] = $method;
     }
 
@@ -59,7 +60,7 @@ class Router
      */
     private function formatRoute($route) {
         $result = rtrim($route, '/');
-
+        
         if($result === '')
             return '/';
         return $result;
