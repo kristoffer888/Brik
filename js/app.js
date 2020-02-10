@@ -66,7 +66,7 @@ function setzone(caller) {
         method: "POST",
         headers: {"Authorization": getAuthCookie()},
         data: {"zone_id": caller.value},
-        success: function (data) {
+        success: function () {
             var input = document.getElementsByName("zzz");
             var inputlist = Array.prototype.slice.call(input);
             inputlist.forEach(buttreset);
@@ -74,10 +74,11 @@ function setzone(caller) {
             caller.style.color = "whitesmoke";
             caller.style.border = "1px solid #484848";
             get();
-        }});
+        }
+    });
 }
 
-function buttreset(value, button) {
+function buttreset(value) {
     value.style.backgroundColor = "#909090";
     value.style.color = "black";
     value.style.border = "unset";
