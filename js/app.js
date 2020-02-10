@@ -10,7 +10,7 @@ function get() {
     $.ajax({
         url: "/Brik/Backend/public/timestamps",
         method: "GET",
-        headers: {"Authorization": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTU4MTA4MTY4Mn0.QfbTtMam4buyx_gpkxR2VwzIn-7bNAl2vQUBLosV-jU"},
+        headers: {"Authorization": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTU4MTQwNTI1Mn0.-lR3ncvlM-qlKGE0KlGInbP-hUNgSBGZtMmpx3_bcAU"},
         success: function (data) {
 
             data = JSON.parse(data);
@@ -41,7 +41,7 @@ function setzone(caller) {
     $.ajax({
         url: "/Brik/Backend/public/register",
         method: "POST",
-        headers: {"Authorization": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTU4MTA4MTY4Mn0.QfbTtMam4buyx_gpkxR2VwzIn-7bNAl2vQUBLosV-jU"},
+        headers: {"Authorization": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTU4MTQwNTI1Mn0.-lR3ncvlM-qlKGE0KlGInbP-hUNgSBGZtMmpx3_bcAU"},
         data: {"zone_id": caller.value},
         success: function () {
             var input = document.getElementsByName("zzz");
