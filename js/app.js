@@ -1,28 +1,51 @@
 var status = 0;
 
 $("document").ready(function () {
-    get();
 
-    getZones();
+    if(getAuthCookie() !== undefined) {
+        get();
+
+        getZones();
+    }
 });
 
 function get() {
     $.ajax({
-        url: "/Brik/Backend/public/timestamps",
+        url: "/Backend/public/timestamps",
         method: "GET",
-        headers: {"Authorization": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTU4MTA4MTY4Mn0.QfbTtMam4buyx_gpkxR2VwzIn-7bNAl2vQUBLosV-jU"},
+        headers: {"Authorization": getAuthCookie()},
         success: function (data) {
 
             data = JSON.parse(data);
             console.log(data);
+
+            if(!data.zone_id)
+            {
+                alert(data);
+                return;
+            }
+
             status = data.zone_id;
 
             insert("location", "Location: " + data.name);
 
-            var input = document.getElementsByName("zzz");
-            var inputlist = Array.prototype.slice.call(input);
+            const input = document.getElementsByName("zzz");
+            const inputlist = Array.prototype.slice.call(input);
             inputlist.forEach(showresults);
         }});
+}
+
+function getFromZone(zoneId) {
+    $.ajax({
+        url: "/Backend/public/zones/timestamps?zone=" + zoneId,
+        method: "GET",
+        headers: {"Authorization": getAuthCookie()},
+        success: function (data) {
+            data = JSON.parse(data);
+            console.log(data);
+
+        }
+    });
 }
 
 function insert(id, data) {
@@ -39,9 +62,9 @@ function showresults(value) {
 
 function setzone(caller) {
     $.ajax({
-        url: "/Brik/Backend/public/register",
+        url: "/Backend/public/register",
         method: "POST",
-        headers: {"Authorization": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTU4MTA4MTY4Mn0.QfbTtMam4buyx_gpkxR2VwzIn-7bNAl2vQUBLosV-jU"},
+        headers: {"Authorization": getAuthCookie()},
         data: {"zone_id": caller.value},
         success: function (data) {
             var input = document.getElementsByName("zzz");
@@ -72,4 +95,24 @@ function getZones() {
     $("#zone-container-button").append("<button class=\"user-button-zone-panel\" name=\"zzz\" value=\"9\" onclick=\"setzone(this)\">HF: Supp/Inf</button>");
     $("#zone-container-button").append("<button class=\"user-button-zone-panel\" name=\"zzz\" value=\"10\" onclick=\"setzone(this)\">HF: Prog</button>");
 
+}
+
+function setAuthCookie(token) {
+    Cookies.set("Authorization", "bearer " + token);
+}
+
+function getAuthCookie() {
+    return Cookies.get("Authorization");
+}
+
+function getToken(userId) {
+    $.ajax({
+        url: "/Backend/public/users/token",
+        method: "POST",
+        data: { "user_id": ($("#" + userId).val()) },
+        success: function (data) {
+            setAuthCookie(data);
+            window.location.href = "/dashboard.html";
+        }
+    })
 }

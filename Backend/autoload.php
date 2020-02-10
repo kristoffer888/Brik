@@ -1,6 +1,6 @@
 <?php
 
-include_once ("./env.php");
+include_once ("env.php");
 
 if(!function_exists('env')) {
     function env($key, $default = null)

@@ -49,3 +49,4 @@ $router->post(env("BASE_URL") . "/users/token", "core\Controller\UserController:
 $router->post(env("BASE_URL") . "/register", "core\Controller\TimestampController::store");
 
 $router->get(env("BASE_URL") . "/timestamps", "core\Controller\TimestampController::getUserTimestamp");
+$router->get(env("BASE_URL") . "/zones/timestamps", "core\Controller\TimestampController::getZoneTimestamps");
