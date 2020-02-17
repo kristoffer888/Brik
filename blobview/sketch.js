@@ -16,9 +16,21 @@ function setup() {
   for (var i = 0; i < 6; i++) {
     zones[i] = new Zone(i);
   }
-  getZoneData();
+
+    getZoneData(1, getFromZone(1).length);
+    getZoneData(2, getFromZone(2).length);
+    getZoneData(3, getFromZone(3).length);
+    getZoneData(4, getFromZone(4).length);
+    getZoneData(5, getFromZone(5).length);
+    getZoneData(6, getFromZone(6).length);
+
   setInterval(function() {
-    getZoneData();
+      getZoneData(1, getFromZone(1).length);
+      getZoneData(2, getFromZone(2).length);
+      getZoneData(3, getFromZone(3).length);
+      getZoneData(4, getFromZone(4).length);
+      getZoneData(5, getFromZone(5).length);
+      getZoneData(6, getFromZone(6).length);
   }, 100);
   zones[0].init();
   zones[1].init();
@@ -28,13 +40,41 @@ function setup() {
   zones[5].init();
 }
 
+function getZoneData(zone, amount) {
+    var data = {
+        "zone5":0,
+        "zone6":0,
+        "programmoerer":0,
+        "serverrum":0,
+        "helpdesk":0,
+        "ekstern":0,
+    };
+
+    switch (zone) {
+        case 1:
+            data.zone5 = amount;
+            break;
+        case 2:
+            data.zone6 = amount;
+            break;
+        case 3:
+            data.programmoerer = amount;
+            break;
+        case 4:
+            data.serverrum = amount;
+            break;
+        case 5:
+            data.helpdesk = amount;
+            break;
+        case 6:
+            data.ekstern = amount;
+            break;
+    }
+    updateData(data);
+}
+
 //Retrieve zone data from database
-function getZoneData() {
-  $(document).ready(function() {
-    $.ajax({
-      url: "http://172.16.6.32/Brik/data.php",
-      type: "get",
-      success: function(data) {
+function updateData(data) {
           var Changed0 = 0;
           var Changed1 = 0;
           var Changed2 = 0;
@@ -112,12 +152,6 @@ function getZoneData() {
             zones[4].removePeople();
           if(Changed5 > 0)
             zones[5].removePeople();
-      },
-      error: function(err) {
-        console.log(err);
-      }
-    });
-  });
 }
 
 //Every frame
