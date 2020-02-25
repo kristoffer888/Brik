@@ -1,0 +1,7 @@
+RewriteEngine on
+
+#RewriteRule ^Brik/Backend/public
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ /brik/Backend/public/index.php/%{REQUEST_URI} [L,QSA]

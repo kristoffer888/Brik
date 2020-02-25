@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="resetstyelsheet.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="opret.css">
+        <title>Opret Bruger</title>
+    </head>
+    <body>
+        <main>
+            <p class="overskrift">Opret Bruger</p>
+            <div id="container">
+                <div id="form">
+                    <p>Udfyld felterne neden for, for at oprette en bruger</p>
+                    <form action="/brik/Backend/public/index.php/users/register" method="POST" enctype="multipart/form-data">
+                        <input type="text" name="first_name" class="user-input" placeholder="Brugernavn" required>
+                        <input type="text" name="last_name" class="user-input lastname" placeholder="Efternavn" required>
+                        <input type="number" name="user_id" class="user-input" placeholder="User ID" required>
+                        <div class="form-group" style="margin-left: 19px; margin-top: 15px; margin-bottom: 0px;">
+                            <input type="file" class="form-control-file" name="file" required>
+                        </div>
+                        <input type="submit" class="opret-button" name="opret-button" value="Opret bruger">
+                    </form> 
+                </div>
+            </div>
+        </main>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    </body>
+</html>

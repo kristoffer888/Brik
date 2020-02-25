@@ -1,0 +1,85 @@
+*{
+    font-family: 'Source Sans Pro', sans-serif;
+    text-decoration: none;
+}
+
+body{
+    background-color: #D2D6DE;
+}
+
+
+/*The start of the css styling for opret form*/
+main #container{
+    margin-top: 10px;
+    padding-top: 20px;
+    width: 360px;
+    height: 250px;
+    background-color: #F0F0F0;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15.5px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+main .user-input{
+    width: 320px;
+    height: 28px;
+    margin-top: 15px;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #B8B8B8;
+    background-color: #deecfc;
+}
+
+
+main .opret-button{
+   margin-bottom: 12px;
+   margin-top: 15px;
+   width: 325px;
+   height: 32px;
+   border: none;
+   border-radius: 3px;
+   background-color: #00A65A;
+   color: whitesmoke;
+   cursor: pointer;
+   font-size: 17px;
+   border-style: solid;
+   border-width: 1px;
+   border-color: #F8F8F8;
+}
+
+main .opret-button:hover{
+    background-color: #017d44;
+}
+
+
+main .cancel-button{
+   margin-top: 15px;
+   padding: 4px 137px;
+   border: none;
+   border-radius: 3px;
+   background-color: #00A65A;
+   color: whitesmoke;
+   cursor: pointer;
+   font-size: 17px;
+   border-style: solid;
+   border-width: 1px;
+   border-color: #F8F8F8;
+}
+
+main .cancel-button:hover{
+   background-color: #017d44;
+}
+
+
+main .overskrift{
+    color: #2e2d28;
+    text-align: center;
+    font-size: 37px;
+    margin-top: 7%;
+    font-weight: 600;
+    
+}
+

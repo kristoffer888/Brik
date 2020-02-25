@@ -1,0 +1,412 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+html,body{
+    height: 100%;
+    width: auto;
+    background-color: #D2D6DE;
+    /*overflow: hidden;*/
+}
+
+.container-fluid{
+    height: 100%;
+}
+
+.row{
+    height: 100%;
+}
+
+#fri,#ulovligt,#zone5,#zone6,#prog,#serverrum,#helpdesk,#ekstern{
+    height: calc(100% - 53.4px);
+}
+
+#ulovligt{
+    border-left: 8px solid #3379a1;
+}
+#prog{
+    border-right: 8px solid #3379a1;
+}
+#ekstern{
+    height: calc(33% - 53.4px) !important;
+}
+#helpdesk{
+    height: calc(20% - 53.4px) !important;
+    padding-top: 28px;
+}
+
+#serverrum {
+    height: calc(46.6% - 53.4px) !important;
+}
+#helpdesk,#ekstern{
+    height: calc(50% - 53.4px);
+}
+
+#fri{
+    height: calc(62.5% - 26.7px);
+}
+
+.syg1{
+    height: calc(25%) !important;
+    border-top: none;
+}
+
+.syg {
+    height: calc(18.75% - 13.35px);
+    border-left: 8px solid #3379a1;
+}
+
+#langtidssyg{
+    height: calc(37.5% - 26.7px - 53.4px);
+    padding-left: 24px;
+    padding-top: 2px;
+}
+
+.syg > * > h2{
+    height: calc(100% - 8px);
+    width: 5%;
+    float: left;
+    padding-top: 8px;
+    padding-left: 8px;
+}
+
+.syg > * > div{
+    height: 100%;
+    float: right;
+    width: 95%;
+    padding-left: 2px;
+    padding-top: 2px;
+}
+
+.prog > .hf{
+    border-left: 4px solid #3379a1;
+}
+
+.prog > .hf > *{
+    height: 100%;
+    border-bottom: 1px solid black;
+}
+
+.hf > * > h2{
+    height: calc(100% - 16px);
+    width: 8% !important;
+    float: left;
+}
+
+.it > .hf > *{
+    height: 100%;
+    border-bottom: 1px solid black;
+}
+
+.it > .hf{
+    border-right: 4px solid #3379a1;
+}
+
+.hf > * > h2{
+    width: calc(100% - 8px);
+}
+
+.hf {
+    height: calc(20% - calc(53.4px/5));
+}
+
+#prog{
+    height: calc(100% - 53.4px);
+}
+#zone5{
+    border-right: 4px solid #3379a1;
+}
+
+#zone6{
+    border-left: 4px solid #3379a1;
+}
+
+#syg1, #syg2, #syg3, #syg4, #syg5{
+    height: 100%;
+    border-bottom: 1px solid black;
+}
+
+#hf1it,#hf2it,#hf3it,#hf4it,#hf5it,#hf6it{
+    height: calc(calc(100% - 53.4px)/6);
+}
+#hf1it,#hf2it,#hf3it,#hf4it,#hf5it{
+    border-bottom: 1px solid black;
+}
+
+#hf1prog,#hf2prog,#hf3prog,#hf4prog,#hf5prog,#hf6prog{
+    height: calc(calc(100% - 53.4px)/6);
+}
+#hf1prog,#hf2prog,#hf3prog,#hf4prog,#hf5prog{
+    border-bottom: 1px solid black;
+}
+
+#fri{
+    padding-left: 27px;
+    padding-right: 27px;
+}
+
+
+#overskrift{
+    text-align: center;
+    width: 100%;
+    background-color: #3379a1;
+    box-shadow: 2px 2px 3px rgba(0,0,0,.25);
+    color: white;
+    padding: 5px;
+    padding-bottom:10px;
+}
+
+.img-container{
+    float: left;
+    height: 100px;
+    width: 100px;
+    margin-bottom: 2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 100%;
+    margin-left: -16px;
+}
+
+.img{
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    image-rendering: smooth;
+}
+
+/*The start of the navbar*/
+header nav{
+    background-color: #3C8DBC;
+}
+
+
+header nav ul{
+    width: 68%;/*70% hvis padding-right bliver enable*/
+    background-color: #3C8DBC;
+    margin-left: auto;
+    margin-right: auto;
+    /*border-left: 1px solid lightblue;*/
+}
+
+header nav ul li{
+    display: inline-block;
+    line-height: 50px;
+
+}
+
+header nav ul li a{
+    color: white;
+    font-size: 33px;
+    line-height: 60px;
+}
+
+header nav ul li p{
+    color: white;
+    font-size: 33px;
+    line-height: 60px;
+}
+
+
+
+header .navbar-float-right-element{
+    float: right;
+}
+
+header .logo{
+    margin-left: 3.5%;
+    float: left;
+    line-height: 60px;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+
+/*The start of the CSS styling for logout button and the username text*/
+header .logout-butten{
+    margin-top: 13px;
+    padding: 6px 16px;
+    border: none;
+    border-radius: 3px;
+    background-color: #de3933;
+    color: whitesmoke;
+    cursor: pointer;
+    font-size: 17px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #484848;
+}
+
+header .username-text{
+    margin-top: 13px;
+    width: auto;
+    height: 34px;
+    border: none;
+    border-radius: 3px;
+    background-color: #990049;
+    color: whitesmoke;
+    font-size: 17px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #484848;
+    pointer-events: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+header .location-text{
+    margin-top: 13px;
+    width: auto;
+    height: 34px;
+    border: none;
+    border-radius: 3px;
+    background-color: #1c993d;
+    color: whitesmoke;
+    font-size: 17px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #484848;
+    pointer-events: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+header .opret-billede{
+    margin-top: 13px;
+    padding: 6px 25px;
+    border: none;
+    border-radius: 3px;
+    background-color: #1c993d;
+    color: whitesmoke;
+    font-size: 17px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #484848;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/*The start of the main container */
+#zone-container-button{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+    width: 790px;
+    height: auto !important;
+    /*background-color: wheat;*/
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 16px;
+}
+
+/*The start of the user interface buttons*/
+.user-button-zone-panel{
+    margin: 15px;
+    border: none;
+    background-color: #909090;
+    width: 230px;
+    height:100px;
+    cursor: pointer;
+    font-size: 33px;
+    border-radius: 3px;
+}
+
+.user-button-zone-panel:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*Ny media ------------------------------------------------orange*/
+@media only screen and (max-width: 1502px) {
+    #zone-container-button{
+        width: 1000px;
+        height: 590px;;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    #zone-container-button{
+        width: 750px;
+        height: 590px;;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/*Ny media ------------------------------------------------Green*/
+@media only screen and (max-width: 782px) {
+    /*The start of the main container */
+    #zone-container-button{
+        width: 530px;
+        height: 590px;;
+        /*background-color: wheat*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    header nav ul li{
+        line-height: 50px;
+    }
+}
+
+@media only screen and (max-width: 621px) {
+    .navbar-float-right-element{
+        width: 100%;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 20px;
+    }
+
+    .jdsai{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    nav{
+        height: 130px;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    /*The start of the main container */
+    #zone-container-button{
+        width: 300px;
+        height: 590px;;
+        /*background-color: wheat*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    header nav ul li{
+        line-height: 50px;
+    }
+
+    header .navbar-float-right-element{
+        float: none;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .jdsai > p{
+        font-size: 24px;
+    }
+    #zone-container-button{
+        width: 230px;
+    }
+}
+
+@media only screen and (max-width: 250px) {
+    header .location-text{
+        font-size: 14px !important;
+    }
+}
