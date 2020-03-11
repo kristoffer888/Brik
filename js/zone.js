@@ -46,7 +46,6 @@ function appendBrik(dataArray) {
             }
             //sæt height og width på billeder i element x til size
             $("#" + id + ">.img-container").css("height", size);
-            //console.log("Size: " + size + ", " + findAmount(document.getElementById(id), size)+" < "+document.getElementById(id).childElementCount+data.student_id);
             $("#" + id + ">.img-container").css("width", size);
         }
     }
@@ -124,6 +123,3 @@ function clear() {
     //Helpdesk
     $("#helpdesk").html("");
 }
-
-
-//console.log("If a elephant dies and becomes a ghost is it still heavy?");
