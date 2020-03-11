@@ -5,17 +5,21 @@
             <url>Backend/public/js/screen.api.js</url>
             <bookmark id="1">
                 <name/>
-                <line>25</line>
+                <line>27</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/brik/Backend/public/screen_4.html</file>
-            <file>file:/C:/xampp/htdocs/brik/Backend/public/js/screen.api.js</file>
-            <file>file:/C:/xampp/htdocs/brik/Backend/core/Route/FetchAPI.php</file>
-            <file>file:/C:/xampp/htdocs/brik/Backend/public/js/screen.js</file>
+            <file>file:/C:/xampp/htdocs/brik/latestversion/tillykke.html</file>
+            <file>file:/C:/xampp/htdocs/brik/latestversion/FetchAPI.php</file>
+            <file>file:/C:/xampp/htdocs/brik/latestversion/js/zone.js</file>
+            <file>file:/C:/xampp/htdocs/brik/latestversion/js/tillykke.js</file>
+            <file>file:/C:/xampp/htdocs/brik/latestversion/js/skole.js</file>
+            <file>file:/C:/xampp/htdocs/brik/latestversion/zone.html</file>
+            <file>file:/C:/xampp/htdocs/brik/latestversion/style.css</file>
+            <file>file:/C:/xampp/htdocs/brik/latestversion/FetchData.php</file>
         </group>
     </open-files>
 </project-private>

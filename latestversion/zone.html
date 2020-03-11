@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="da">
+    <head>
+        <title>Zone</title>
+        <link rel="shortcut icon" href="#" />
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <!--Første zone tabel-->
+                <div id="clock"></div>
+                <div class="col-lg-6" style="padding: 0; background-color: whitesmoke;">
+                        <div class="overskrift">
+                        <h2 style="margin:0;" id="ozon6">MU7-Zone 6 ()</h2>
+                    </div>
+                    <div id="zone6" style="padding-top: 2px;">
+                    </div>
+                    <div class="overskrift">
+                        <h2 style="margin:0;" id="ozon5">MU7-Zone 5 ()</h2>
+                    </div>
+                    <div id="zone5" style="padding-top: 2px;">
+                    </div>
+                    <div class="overskrift">
+                        <h2 style="margin:0;" id="ohelp">MU8-Zone 37A ()</h2>
+                    </div>
+                    <div id="helpdesk" style="padding-top: 2px;">
+                    </div>
+                </div>
+
+                <!--Anden zone tabel-->
+                <div class="col-lg-6" style="padding: 0; background-color: whitesmoke;">
+                    <div class="overskrift">
+                        <h2 style="margin:0;" id="oprog">MU7-Zone 8 ()</h2>
+                    </div>
+                    <div id="prog" style="padding-top: 2px;">
+                    </div>
+
+                    <div class="overskrift">
+                        <h2 style="margin:0;" id="oserv">MU7-Zone 9 ()</h2>
+                    </div>
+                    <div id="serverrum" style="padding-top: 2px;">
+                    </div>
+                    <div id="ekstern">
+                        <div class="overskrift">
+                            <h2 style="margin:0;" id="oekst">Ekstern ()</h2>
+                        </div>
+                        <div id="eksternind" style="width: 50%; height: calc(100% - 53.4px); float: left">
+                            <div class="overskrift" style="background-color: #4786aa;">
+                                <h6 style="margin:0;" id="oeksti">Inde ()</h6>
+                            </div>
+                            <div id="eksternind_" style="height: calc(100% - 34.2px); border-right: 2px solid #4786aa;">
+                            </div>
+                        </div>
+                        <div id="eksternud" style="width: 50%; height: calc(100% - 53.4px); float: right">
+                            <div class="overskrift" style="background-color: #4786aa;">
+                                <h6 style="margin:0;" id="oekstu">Ude ()</h6>
+                            </div>
+                            <div id="eksternud_" style="height: calc(100% - 34.2px); border-left: 2px solid #4786aa;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="js/zone.js"></script>
+    </body>
+</html>
